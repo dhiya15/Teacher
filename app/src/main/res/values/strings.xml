@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Teacher</string>
+    <string name="code">Code</string>
+    <string name="password">Password</string>
+    <string name="send">Send</string>
+    <string name="dataSaved">Data Saved Successfully !</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">User Full Name</string>
+    <string name="nav_header_subtitle">user.email@univ-name.dz</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_marks">Marks</string>
+    <string name="menu_quiz">Quiz</string>
+
+    <array name="promos">
+        <item></item>
+        <item>1MIAD</item>
+        <item>1MSIR</item>
+        <item>1MSIA</item>
+        <item>2MIAD</item>
+        <item>2MSIR</item>
+        <item>2MSIA</item>
+        <item>ADMIN</item>
+    </array>
+
+    <array name="annType">
+        <item></item>
+        <item>Grad. Project</item>
+        <item>Holiday</item>
+    </array>
+
+</resources>
