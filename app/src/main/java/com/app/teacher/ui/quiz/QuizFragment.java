@@ -1,6 +1,7 @@
 package com.app.teacher.ui.quiz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.app.teacher.R;
+import com.app.teacher.ui.attendance.AttendanceActivity;
 import com.app.teacher.ui.profile.ProfileFragment;
 import com.studioidan.httpagent.HttpAgent;
 import com.studioidan.httpagent.JsonCallback;
@@ -52,7 +54,7 @@ public class QuizFragment extends Fragment {
 
     EditText questionEditText, responseEditText;
 
-    Button buttonAddQuiz, buttonSendQuiz;
+    Button buttonAddQuiz, buttonSendQuiz, buttonAttendance;
 
     String teacherCode = "";
 
@@ -111,6 +113,15 @@ public class QuizFragment extends Fragment {
                                 }
                             });
                 }
+            }
+        });
+
+        buttonAttendance = root.findViewById(R.id.buttoAtt);
+        buttonAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), AttendanceActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -1,6 +1,9 @@
 package com.app.teacher;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +22,8 @@ import com.studioidan.httpagent.HttpAgent;
 import com.studioidan.httpagent.JsonCallback;
 import com.studioidan.httpagent.StringCallback;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -67,6 +72,17 @@ public class MenuActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        if(checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) &&
+                checkPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)){
+
+        }else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION},
+                    1000);
+        }
+
+
         userName = navigationView.getHeaderView(0).findViewById(R.id.userFullName);
         userEmail = navigationView.getHeaderView(0).findViewById(R.id.textViewEmail);
         imgProfile = navigationView.getHeaderView(0).findViewById(R.id.imageView2);
@@ -93,6 +109,11 @@ public class MenuActivity extends AppCompatActivity {
                         }
                     });
         }
+    }
+
+    public boolean checkPermission(Context context, String permission){
+        int check = ContextCompat.checkSelfPermission(context, permission);
+        return (check == PackageManager.PERMISSION_GRANTED);
     }
 
     @Override

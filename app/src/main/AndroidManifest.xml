@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.teacher">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +17,7 @@
         android:theme="@style/Theme.Teacher.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity android:name=".MenuActivity" />
+        <activity android:name=".ui.attendance.AttendanceActivity" />
         <activity android:name=".ui.announcement.Announcement" />
         <activity
             android:name=".MainActivity"
